@@ -1,0 +1,108 @@
+<div class="container">
+  <div class="link-menu">
+    <%= link_to "TOP", "/",class: "link" %>
+    <p>/</p>
+    <%= link_to "定期試験", "/term_exams/index",class: "link" %> 
+    <p>/</p>
+    <%= link_to "新規登録", "/term_exams/new",class: "link" %> 
+  </div>
+  <div class="tytle">
+    <h1>指導報告書制作</h1>
+  </div>
+  <div class="report-form-wrapper">
+    <%= form_tag("/term_exams/#{@exam.id}/update",method: :update) do %>
+      <div class = "data-form" >
+          <li>学年</li>
+          <input type="string"  name="grade" list ="gradeNumber"  required  >
+          <datalist id ="gradeNumber">
+            <option value="1"></option>
+            <option value="2"></option>
+            <option value="3"></option>
+          </datalist>
+
+          <li>学期</li>
+          <input type="string" name="term" list="termName" required>
+          <datalist id ="termName">
+            <option value="前期"></option>
+            <option value="後期"></option>
+            <option value="1学期"></option>
+            <option value="2学期"></option>
+            <option value="3学期"></option>
+          </datalist>
+
+          <li>種類</li>
+          <input type="string" name="examType" list="typeName" required>
+          <datalist id ="typeName">
+            <option value="中間"></option>
+            <option value="期末"></option>
+            <option value="実力"></option>
+          </datalist>
+
+          <li>科目</li>
+          <input type="string" name="subject" list="subjectName" required>
+
+          <datalist id ="subjectName">
+            <option value="英語"></option>
+            <option value="コミュニケーション英語Ⅰ"></option>
+            <option value="コミュニケーション英語Ⅱ"></option>
+            <option value="コミュニケーション英語Ⅲ"></option>
+            <option value="論理・表現Ⅰ"></option>
+            <option value="論理・表現Ⅱ"></option>
+            <option value="論理・表現Ⅲ"></option>
+            <option value="国語"></option>
+            <option value="現代文"></option>
+            <option value="古文"></option>
+            <option value="漢文"></option>
+            <option value="数学"></option>
+            <option value="代数"></option>
+            <option value="幾何"></option>
+            <option value="数学Ⅰ"></option>
+            <option value="数学Ⅱ"></option>
+            <option value="数学Ⅲ"></option>
+            <option value="数学A"></option>
+            <option value="数学B"></option>
+            <option value="数学C"></option>
+            <option value="数学Ⅰ・A"></option>
+            <option value="数学Ⅱ・B"></option>
+            <option value="数学Ⅲ・C"></option>
+            <option value="社会"></option>
+            <option value="日本史A"></option>
+            <option value="日本史B"></option>
+            <option value="世界史A"></option>
+            <option value="世界史B"></option>
+            <option value="地理A"></option>
+            <option value="地理B"></option>
+            <option value="倫理"></option>
+            <option value="政治経済"></option>
+            <option value="倫理・政経"></option>
+            <option value="理科"></option>
+            <option value="化学基礎"></option>
+            <option value="化学"></option>
+            <option value="生物基礎"></option>
+            <option value="生物"></option>
+            <option value="物理基礎"></option>
+            <option value="物理"></option>
+            <option value="地学基礎"></option>
+            <option value="地学"></option>
+            <option value="情報"></option>
+            <option value="音楽"></option>
+            <option value="家庭科"></option>
+            <option value="保健・体育"></option>
+          </datalist>
+
+          <li>目標点</li>
+          <input type="integer" name="goal" required>
+
+
+          <li>結果</li>
+          <input type="integer" name="result" required>
+
+
+          <input type="submit" value="作成する">
+
+          
+        </form>
+      </div>
+    <%end%>
+  </div>
+</div>

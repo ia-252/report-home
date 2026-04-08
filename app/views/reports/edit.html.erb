@@ -1,0 +1,46 @@
+<div class="main posts-new">
+  <div class="container">
+    <div class="link-menu">
+      <%= link_to "TOP", "/",class: "link" %>
+      <p>/</p>
+      <%= link_to "指導報告書", "/reports/index",class: "link" %> 
+      <p>/</p>
+      <%= link_to "授業情報", "/reports/#{@report.id}",class: "link" %> 
+      <p>/</p>
+      <%= link_to "編集", "/reports/#{@report.id}/edit",class: "link" %> 
+    </div>
+    
+    <div class="report-menu">
+      <h1 class="form-heading">編集する</h1>
+      <%= link_to "削除", "/reports/#{@report.id}/destroy", data:{turbo_method: :post}, class: "delete"%> 
+    </div>
+    <div class="report-form-wrapper">
+      <%= form_tag("/reports/#{@report.id}/update",method: :update) do %>
+        <div class = "data-form" >
+            <%= form_with model: @reports_index_path, local: true do |form| %>
+              <li>日づけ</li>
+                <%= form.date_field :classDate, value: @report.classDate %>
+              <li>時間</li>
+                <%= form.time_field :classTime, value: @report.classTime %>
+              <li>科目</li>
+                <%= form.text_field :classSubject, value: @report.classSubject %>
+                <datalist id ="subjectName">
+                  <option value="英語"></option>
+                  <option value="数学"></option>
+                  <option value="国語"></option>
+                  <option value="理科"></option>
+                  <option value="社会"></option>
+                </datalist>
+              <li>授業内容</li>
+                <%= form.text_field :classContent, value: @report.classContent %>
+              <li>宿題</li>
+                <%= form.text_field :classHomework, value: @report.classHomework %>
+              <li>コメント</li>
+                <%= form.text_field :classComment, value: @report.classComment %>
+              <%= form.submit value="保存"%>
+            <% end %>
+        </div>
+      <%end%>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,2 @@
+module TermExamsHelper
+end

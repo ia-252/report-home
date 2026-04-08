@@ -1,0 +1,70 @@
+<div class="main reports-show">
+  <div class="container">
+    <div class="link-menu">
+      <%= link_to "TOP", "/",class: "link" %>
+      <p>/</p>
+      <%= link_to "指導報告書", "/reports/index",class: "link" %> 
+      <p>/</p>
+      <%= link_to "授業情報", "/reports/#{@report.id}",class: "link" %> 
+    </div>
+
+    <h1>授業情報</h1>
+    <div class="reports-Details">
+      <div class="class-Detail">
+        <p>日にち</p> 
+        <div class="class-data">
+          <div class="data"><%= @report.classDate.strftime("%m/%d") %></div>
+        </div>
+      </div>
+      <div class="class-Detail">
+        <div class="class-Time">
+          <p>時間</p>
+          <div class="class-data">
+            <div class="data"><%= @report.classTime.strftime("%-H:%M")%></div>
+          </div>
+        </div>
+      </div>
+      <div class="class-Detail">
+        <div class="class-Subject">
+          <p>科目</p>
+          <div class="class-data">
+            <div class="data"><%= @report.classSubject%></div>
+          </div>
+        </div>
+      </div>
+      <div class="class-Detail">
+        <div class="class-Content">
+          <p>授業内容</p>
+          <div class="class-data">
+            <div class="data"><%= @report.classContent%></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="class-Detail">
+        <div class="class-Homework">
+          <%= link_to "宿題", "/reports/homework/#{@report.id}", class: "p" %> 
+          <div class="class-data">
+            <div class="data"><%= @report.classHomework%></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="class-Detail">
+        <div class="class-Comment">
+          <p>コメント</p>
+          <div class="class-data">
+            <div class="data"><%= @report.classComment%></div>
+          </div>
+        </div>
+      </div>
+    </div>  
+
+    <div class="btn-wrapper">
+      <div class="post-menus">
+        <%= link_to("編集", "/reports/#{@report.id}/edit") %>
+        <%= link_to("削除", "/reports/#{@report.id}/destroy", data: {turbo_method: :post}) %>
+      </div>
+    </div>
+  </div>
+</div>

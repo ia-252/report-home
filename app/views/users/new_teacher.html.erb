@@ -1,0 +1,40 @@
+  <div class="main">
+    <div class="container">
+      <div class="link-menu">
+        <%= link_to "TOP", "/",class: "link" %>
+      </div>
+      <div class="tytle">
+        <h1>新規ユーザー登録<h1>
+      </div>
+      <div class="sub-tytle">
+        <%= link_to("生徒用はこちら","/signup/student")%>
+      </div>
+      
+      <div class="student users-form">
+        <div class="form-body">
+          <% @userT.errors.full_messages.each do |message| %>
+            <div class="form-error">
+              <%= message %>
+            </div>
+          <% end %>
+
+            <div class="student"><p>講師用<p></div>
+              <%= form_tag("/users/create/teacher") do %>
+                <p>ユーザー名</p>
+                <input name="name" value="<%= @userT.name %>">
+                <p>講師ID</p>
+                <input name="teacherId" value="<%= @userT.teacherId %>">
+                <p>メールアドレス</p>
+                <input name="email" value="<%= @userT.email %>">
+                <p>パスワード</p>
+                <input type="password" name="password" value="<%= @userT.password %>">
+                <p>パスワード(確認用)</p>
+                <input type="password" name="password_check" value="<%= @userT.password %>">
+                <input type="hidden" name="student" value="false">
+                <input class = "submit" type="submit" value="新規登録">
+              <% end %>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>

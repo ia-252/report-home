@@ -1,0 +1,27 @@
+<div class= "container">
+    <div class="link-menu">
+        <%= link_to "TOP", "/",class: "link" %>
+        <p>/</p>
+        <%= link_to "宿題", "/homeworks/index",class: "link" %> 
+        <p>/</p>
+        <%= link_to "#{@report.classDate}の宿題", "/homeworks/#{@report.id}",class: "link" %> 
+    </div>
+    <div class= "container-header">
+        <h1>
+            <%= @report.classDate.strftime("%m/%d")%>の宿題
+        </h1>
+    </div>
+
+    <div class= "homework main-wrapper">
+        <%= @report.classHomework%>
+            <div class="checkbox">
+                <%= form_with  url: "/homeworks/#{@report.id}/done", method: :post do |f| %>
+                    <%= f.radio_button :done, "1", :checked => @report.done%>
+                    <%= f.label :done_btn, "完了" %>
+                    <%= f.radio_button :done, "0" %>
+                    <%= f.label :done_btn, "未完了" %>
+                    <%= f.submit "保存"%>
+                <% end %>
+            </div>  
+    </div>
+</div>

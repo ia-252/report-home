@@ -1,0 +1,39 @@
+<div class="main reports-index">
+    <div class="container">
+        <div class="link-menu">
+            <%= link_to "TOP", "/",class: "link" %>
+            <p>/</p>
+            <%= link_to "指導報告書", "/reports/index",class: "link" %>   
+        </div>
+        
+        <div class="index-header">
+            <div class="tytle">
+                <h1>指導報告書</h1>
+            </div>
+            <div class="new-btn">
+                <a href="/reports/new">+</a>
+            </div>
+        </div>
+        
+        <div class="report-table-wrapper">
+                
+                <div class="calendar">
+                    <%= month_calendar events: @reports do |date, reports| %>
+                        <%= date.day %>
+                    
+                        <% reports.each do |report| %>
+                        <div class = "day-field">
+                            
+                        
+                            <%=  link_to  "#{report.classTime.strftime("%H:%M")}~ #{report.classSubject}" , "/reports/#{report.id}" ,class: "event" %>
+                        </div>
+                        <% end %>
+                    <% end %>
+        </div>    
+    
+    </div>
+
+
+    
+    
+</div>

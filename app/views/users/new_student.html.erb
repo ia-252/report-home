@@ -1,0 +1,50 @@
+  <div class="main">
+    <div class="container">
+      <div class="link-menu">
+        <%= link_to "TOP", "/",class: "link" %>
+      </div>
+      <div class="tytle">
+        <h1>新規ユーザー登録<h1>
+      </div>
+      <div class="sub-tytle">
+        <%= link_to("講師用はこちら","/signup/teacher")%>
+      </div>
+      
+      <div class="student users-form">
+        <div class="form-body">
+          <% @user.errors.full_messages.each do |message| %>
+            <div class="form-error">
+              <%= message %>
+            </div>
+          <% end %>
+
+            <div class="student"><p>生徒用<p></div>
+              <%= form_tag("/users/create/student") do %>
+                <p>ユーザー名</p>
+                <input name="name" value="<%= @user.name %>">
+                <p>学年</p>
+                <select name="grade" value="<%= @user.grade%>">
+                  <option <% if @user.grade == nil%>selected<%end%>>選択してください</option>
+                  <option value="中1" <% if @user.grade == "中1"%>selected<%end%>>中1</option>
+                  <option value="中2" <% if @user.grade == "中2"%>selected<%end%>>中2</option>
+                  <option value="中3" <% if @user.grade == "中3"%>selected<%end%>>中3</option>
+                  <option value="高1" <% if @user.grade == "高1"%>selected<%end%>>高1</option>
+                  <option value="高2" <% if @user.grade == "高2"%>selected<%end%>>高2</option>
+                  <option value="高3" <% if @user.grade == "高3"%>selected<%end%>>高3</option>
+                </select>
+                <p>生徒ID</p>
+                <input name="studentId" value="<%= @user.studentId %>">
+                <p>メールアドレス</p>
+                <input name="email" value="<%= @user.email %>">
+                <p>パスワード</p>
+                <input type="password" name="password" value="<%= @user.password %>">
+                <p>パスワード(確認用)</p>
+                <input type="password" name="password_confirmation" value="<%= @user.password %>">
+                <input type="hidden" name="student" value="true">
+                <input class = "submit" type="submit" value="新規登録">
+              <% end %>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>

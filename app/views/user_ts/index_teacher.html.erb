@@ -1,0 +1,38 @@
+<div class="main posts-new">
+  <div class="container">
+    <div class="link-menu">
+      <%= link_to "TOP", "/",class: "link" %>
+    </div>
+    <div class="tytle">
+        <h1 class="form-heading">設定</h1>
+    </div>
+    
+    <div class="teacher users-form">
+        <div class="form-body">
+          <% @userT.errors.full_messages.each do |message| %>
+            <div class="form-error">
+              <%= message %>
+            </div>
+          <% end %>
+            <div class="user-menu">
+            <h1 class="form-heading">設定</h1>
+            </div>
+            <div class="student">
+                <%= form_tag("user_ts/#{@userT.id}/update") do %>
+                    <p>ユーザー名</p>
+                    <input name="name" value="<%= @userT.name %>">
+                    <p>担当生徒ID</p>
+                    <div class="plus_btn">
+                      <%=link_to("+","/belongs/teacher/#{@userT.id}/add_students")%>
+                    </div>
+                    <p>メールアドレス</p>
+                    <input name="email" value="<%= @userT.email %>">
+                    <p>パスワード</p>
+                    <input type="password" name="password" value="<%= @userT.password %>">
+                    <input class = "submit" type="submit" value="編集">
+                <% end %>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>

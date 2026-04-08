@@ -1,0 +1,290 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ 
+ *= require_tree .
+ *= require_self
+ *= require simple_calendar
+ */
+
+ @use "bootstrap";
+ 
+ 
+
+ *{
+   box-sizing: border-box;  
+ }
+ 
+ body {
+     margin: 0;
+     font-family: "Hiragino Kaku Gothic ProN";
+ }
+   
+
+li{
+  list-style: none;
+}
+ a {
+     text-decoration: none;
+     color:inherit;
+ }
+ 
+ br {
+     content:"";
+ }
+ 
+ .clear{
+     clear:left;
+ }
+ .fas{
+     color:white;
+ }
+   
+ .main-wrapper{
+  background-color: rgb(255, 224, 195);
+ }
+
+ .container {
+     padding-top: 80px;
+     padding-bottom: 80px;
+     width: 100%;
+     padding: 0 ,15px;
+     margin: 0 auto;
+     padding-left: 5%;
+     padding-right: 5%;
+     background-color:rgb(255, 224, 195);
+     & h1{
+      color: white;
+     }
+ }
+
+ .link-menu{
+  margin-top: 0;
+  background-color: white;
+  color:rgb(234, 158, 86);
+  display: inline;
+  & p{
+    display: inline;
+  }
+}
+.link{
+  display: inline;
+}
+
+.tytle{
+  display: block;
+  margin-bottom: 0px;
+  padding: 0 0;
+}
+
+ .tytle{
+  color:white;
+ }
+ 
+ 
+ header {
+     height: 65px;
+     width: 100%;
+     background-color:rgb(255, 188, 125);
+     position :fixed;
+     top: 0;
+     z-index: 10;
+     color:white;
+ }
+ 
+ .header-left{
+     float:left;
+     margin-left:5px;
+ }
+
+ .header-right{
+  float:right;
+  margin-right: 5px;
+ }
+ 
+ .header-left h2{
+     font-size: 20px;
+ }
+ 
+ 
+ summary{
+     display: block;
+     margin: 0;
+     
+ }
+ 
+ summary::webkit-details-marker{
+     display: none;
+ }
+ 
+ .menu-bar_01{
+     position: absolute;
+     margin-right: 0;
+     padding-right: 0;
+ }
+
+ .menu-bar-list{
+     display: block;
+     float: right;
+     opacity: 0.7;
+     position: absolute;
+     top:65px;
+     right: 0;
+}
+ 
+ .menu-bar-list a{
+     display:block;
+     background-color: white;
+     color:rgb(234, 158, 86);
+     padding: 10px 100px 10px 30px;
+     border-bottom: 1px solid rgb(255, 188, 125);
+     margin: 0;
+     max-width: 600px;
+ }
+ 
+ .menu-bar{ 
+     font-size:35px;
+     margin-top: -10px;
+     padding: 0;
+     color:white;
+     float:right;
+     margin-right: 5px;
+ }
+ 
+ 
+ .main-wrapper{
+     text-align: center;
+ }
+ 
+ .menu{
+     width:100%;
+     float:left;
+     margin-top: 20px;
+ }
+ 
+ .menu-icon{
+     background-color: white;
+     color:burlywood;
+     padding: 40px 0 0 0;
+     margin-left: 20%;
+     margin-right: 20%;
+ }
+ 
+ .menu p{
+     text-align: center;
+ }
+ 
+ .menu-icon a{
+     display:block;
+     font-size: 20px;
+     padding: 40px 80px;
+     
+ }
+
+ nav{
+  background-color:rgb(255, 224, 195) ;
+  border-radius: 3px;
+  padding: 0 5px;
+  margin: 0 5px;
+ }
+
+ .nemu-bar02{
+  color: white;
+  width: 100%;
+  display: inline;
+  position: relative;
+  right: 50px;
+  top:20px;
+ }
+
+ .nemu-bar03{
+  color: white;
+  width: 100%;
+  display: inline;
+  position: relative;
+  right: 60px;
+  top:20px;
+ }
+ 
+ .calendar-heading{
+  height: 40px;
+  line-height: 40px;
+  
+ }
+ 
+ /* メディアクエリ==============================================================*/
+ @media all and (max-width: 1000px) {
+   .menu{
+     width:50%;
+     display: inline-block;
+     margin-right: -10px;
+   }
+ 
+ .menu-icon{
+     background-color: white;
+     color:burlywood;
+     padding: 40px 0;
+     margin:20px 20px;
+   }
+ 
+ .menu p{
+     text-align: center;
+   }
+ 
+ .menu-icon a{
+     display:block;
+     font-size: 20px;
+     padding: 40px 80px;
+   }
+ 
+ .btn{
+     text-align: center;
+     font-size: 100px;
+   }
+     
+    h2{
+     font-size:20px;
+       } 
+ }
+   
+ /* モバイル向けレイアウト =======================================================*/
+ @media all and (max-width: 670px) {
+   .menu{
+     width:100%;
+     float:left;
+     margin-top: 20px;
+   }
+ 
+ .menu-icon{
+     background-color: white;
+     color:burlywood;
+     padding: 40px 0;
+     margin-left: 10%;
+     margin-right: 10%;
+   }
+ 
+ .menu p{
+     text-align: center;
+   }
+ 
+ .menu-icon a{
+     display:block;
+     font-size: 20px;
+     padding: 40px 80px;
+     font-size: 15px;
+   }
+ 
+ .btn{
+     text-align: center;
+     font-size: 100px;
+   }
+ }

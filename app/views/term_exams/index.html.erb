@@ -1,0 +1,146 @@
+<script>
+    var row-right = right-border.rows.length;
+    var row-no = no-border.rows.length;
+</script>
+<div class="container">
+   
+        <div class="link-menu">
+            <%= link_to "TOP", "/",class: "link" %>
+            <p>/</p>
+            <%= link_to "授業予定", "/schedules/index",class: "link" %> 
+        </div>
+    <div class="index-header">
+        <div class="tytle">
+            <h1>定期試験</h1>
+        </div>
+        <div class="new-btn">
+            <a href="/term_exams/new">+</a>
+        </div>
+    </div>
+    <div class="main">
+        <div class="sort-wrapper">
+            <div class="sort">
+                <details>
+                        <summary>
+                            <p>学年</p>
+                        </summary>
+                            <div class="sort-list">
+                                <div class="sort-item"><%= link_to 'すべて', term_exams_index_path(gradeAll: "true") %></div><br>
+                                <div class="sort-item"><%= link_to '1', term_exams_index_path(grade_1: "true") %></div><br>
+                                <div class="sort-item"><%= link_to '2', term_exams_index_path(grade_2: "true") %></div><br>
+                                <div class="sort-item"><%= link_to '3', term_exams_index_path(grade_3: "true") %></div><br>
+                            </div>
+                </details>   
+            </div>    
+            <div class="sort">
+                <details>
+                    <summary>
+                        <p>学期</p>
+                    </summary>
+                        <div class="sort-list">
+                        <div class="sort-item"><%= link_to 'すべて', term_exams_index_path(termAll: "true") %></div><br>
+                            <div class="sort-item"><%= link_to '前期', term_exams_index_path(firstHalf: "true") %></div><br>
+                            <div class="sort-item"><%= link_to '後期', term_exams_index_path(secondHalf: "true") %></div><br>
+                            <div class="sort-item"><%= link_to '1学期', term_exams_index_path(firstSemester: "true") %></div><br>
+                            <div class="sort-item"><%= link_to '2学期', term_exams_index_path(secondSemester: "true") %></div><br>
+                            <div class="sort-item"><%= link_to '3学期', term_exams_index_path(thirdSemester: "true") %></div><br>
+                        </div>
+                </details>   
+            </div> 
+            <div class="sort">
+                <details>
+                        <summary>
+                            <p>種類</p>
+                        </summary>
+                            <div class="sort-list">
+                            <div class="sort-item"><%= link_to 'すべて', term_exams_index_path(examTypeAll: "true") %></div><br>
+                                <div class="sort-item"><%= link_to '中間', term_exams_index_path(midterm: "true") %></div><br>
+                                <div class="sort-item"><%= link_to '期末', term_exams_index_path(final: "true") %></div><br>
+                                <div class="sort-item"><%= link_to '実力', term_exams_index_path(standardized: "true") %></div><br>
+                            </div>
+                </details>   
+            </div>
+            <div class="sort">
+                <details>
+                        <summary>
+                            <p>科目</p>
+                        </summary>
+                            <div class="sort-list">
+                            <div class="sort-item"><%= link_to 'すべて', term_exams_index_path(subjectAll: "true") %></div><br>
+                                <div class="sort-item"><%= link_to '英語', term_exams_index_path(english: "true") %></div><br>
+                                <div class="sort-item"><%= link_to 'コミュニケーション英語Ⅰ', term_exams_index_path(ce_1: "true") %></div><br>
+                                <div class="sort-item"><%= link_to 'コミュニケーション英語Ⅱ', term_exams_index_path(ce_2: "true") %></div><br>
+                                <div class="sort-item"><%= link_to 'コミュニケーション英語Ⅲ', term_exams_index_path(ce_3: "true") %></div><br>
+                                <div class="sort-item"><%= link_to '論理・表現Ⅰ', term_exams_index_path(le_1: "true") %></div><br>
+                                <div class="sort-item"><%= link_to '論理・表現Ⅱ', term_exams_index_path(le_2: "true") %></div><br>
+                                <div class="sort-item"><%= link_to '論理・表現Ⅲ', term_exams_index_path(le_3: "true") %></div><br>
+                                <div class="sort-item"><%= link_to '国語', term_exams_index_path(japanese: "true") %></div><br>
+                                <div class="sort-item"><%= link_to '現代文', term_exams_index_path(mj: "true") %></div><br>
+                                <div class="sort-item"><%= link_to '古文', term_exams_index_path(oj: "true") %></div><br>
+                                <div class="sort-item"><%= link_to '漢文', term_exams_index_path(oc: "true") %></div><br>
+                                <div class="sort-item"><%= link_to '数学', term_exams_index_path(math: "true") %></div><br>
+                                <div class="sort-item"><%= link_to '代数', term_exams_index_path(aljebra: "true") %></div><br>
+                                <div class="sort-item"><%= link_to '幾何', term_exams_index_path(geometry: "true") %></div><br>
+                                <div class="sort-item"><%= link_to '数学Ⅰ', term_exams_index_path(m_1: "true") %></div><br>
+                                <div class="sort-item"><%= link_to '数学Ⅱ', term_exams_index_path(m_2: "true") %></div><br>
+                                <div class="sort-item"><%= link_to '数学Ⅲ', term_exams_index_path(m_3: "true") %></div><br>
+                                <div class="sort-item"><%= link_to '数学A', term_exams_index_path(m_a: "true") %></div><br>
+                                <div class="sort-item"><%= link_to '数学B', term_exams_index_path(m_b: "true") %></div><br>
+                                <div class="sort-item"><%= link_to '数学C', term_exams_index_path(m_c: "true") %></div><br>
+                                <div class="sort-item"><%= link_to '数学Ⅰ・A', term_exams_index_path(m_1a: "true") %></div><br>
+                                <div class="sort-item"><%= link_to '数学Ⅱ・B', term_exams_index_path(m_2b: "true") %></div><br>
+                                <div class="sort-item"><%= link_to '数学Ⅲ・C', term_exams_index_path(m_3c: "true") %></div><br>
+                                <div class="sort-item"><%= link_to '社会', term_exams_index_path(ss: "true") %></div><br>
+                                <div class="sort-item"><%= link_to '日本史A', term_exams_index_path(jh_a: "true") %></div><br>
+                                <div class="sort-item"><%= link_to '日本史B', term_exams_index_path(jh_b: "true") %></div><br>
+                                <div class="sort-item"><%= link_to '世界史A', term_exams_index_path(wh_a: "true") %></div><br>
+                                <div class="sort-item"><%= link_to '世界史B', term_exams_index_path(wh_b: "true") %></div><br>
+                                <div class="sort-item"><%= link_to '地理A', term_exams_index_path(g_a: "true") %></div><br>
+                                <div class="sort-item"><%= link_to '地理B', term_exams_index_path(g_b: "true") %></div><br>
+                                <div class="sort-item"><%= link_to '倫理', term_exams_index_path(ethics: "true") %></div><br>
+                                <div class="sort-item"><%= link_to '政治経済', term_exams_index_path(politics: "true") %></div><br>
+                                <div class="sort-item"><%= link_to '倫理・政経', term_exams_index_path(ep: "true") %></div><br>
+                                <div class="sort-item"><%= link_to '理科', term_exams_index_path(sc: "true") %></div><br>
+                                <div class="sort-item"><%= link_to '化学基礎', term_exams_index_path(cb: "true") %></div><br>
+                                <div class="sort-item"><%= link_to '化学', term_exams_index_path(chemistry: "true") %></div><br>
+                                <div class="sort-item"><%= link_to '生物基礎', term_exams_index_path(bb: "true") %></div><br>
+                                <div class="sort-item"><%= link_to '生物', term_exams_index_path(biology: "true") %></div><br>
+                                <div class="sort-item"><%= link_to '物理基礎', term_exams_index_path(pb: "true") %></div><br>
+                                <div class="sort-item"><%= link_to '物理', term_exams_index_path(physics: "true") %></div><br>
+                                <div class="sort-item"><%= link_to '地学基礎', term_exams_index_path(gb: "true") %></div><br>
+                                <div class="sort-item"><%= link_to '地学', term_exams_index_path(giology: "true") %></div><br>
+                                <div class="sort-item"><%= link_to '情報', term_exams_index_path(informatics: "true") %></div><br>
+                                <div class="sort-item"><%= link_to '音楽', term_exams_index_path(music: "true") %></div><br>
+                                <div class="sort-item"><%= link_to '家庭科', term_exams_index_path(he: "true") %></div><br>
+                                <div class="sort-item"><%= link_to '保健・体育', term_exams_index_path(pe: "true") %></div><br>
+                            </div>
+                </details>   
+            </div>          
+        </div>
+        
+        <div class="table">
+            <div class="table-head">
+                <div class="right-border"><p>学年</p></div>
+                <div class="right-border"><p>学期</p></div>
+                <div class="right-border"><p>種類</p></div>
+                <div class="right-border"><p>科目</p></div>
+                <div class="right-border"><p>目標点</p></div>
+                <div class="right-border"><p>結果</p></div>
+                <div class="no-border"><p>目標との差</p></div>
+            </div>
+            
+            <% @exams.each do |exam| %>
+                <div class="wrapper">
+                    <div class="table-wrapper">
+                    <div class="right-border"><p><%= exam.grade %></p></div><div class="right-border"><p><%= exam.term %></p></div><div class="right-border"><p><%= exam.examType %></p></div><div class="right-border"><p><%= exam.subject%></p></div><div class="right-border"><p><%= exam.goal%></p></div><div class="right-border"><p><%= exam.result%></p></div><div class="no-border"><p><%= exam.result - exam.goal%></p></div>
+                    </div>
+                
+                    <div class="table-btn-wrapper">
+                        <%= link_to("削除","/term_exams/#{exam.id}/destroy", data: {turbo_method: :post})%>
+                        <%= link_to("編集","/term_exams/#{exam.id}/edit")%>
+                    </div>
+                </div>
+            <%-end-%>
+        </div>
+    </div>
+</div>

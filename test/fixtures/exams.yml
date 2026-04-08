@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  grade: MyString
+  term: MyString
+  type: 
+  subject: MyString
+  goal: 1
+  result: 1
+  gap: 1
+
+two:
+  grade: MyString
+  term: MyString
+  type: 
+  subject: MyString
+  goal: 1
+  result: 1
+  gap: 1

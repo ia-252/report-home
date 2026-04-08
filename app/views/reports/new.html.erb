@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="link-menu">
+    <%= link_to "TOP", "/",class: "link" %>
+    <p>/</p>
+    <%= link_to "指導報告書", "/reports/index",class: "link" %> 
+    <p>/</p>
+    <%= link_to "新規登録", "/reports/new",class: "link" %> 
+  </div>
+  <div class="tytle">
+    <h1>指導報告書制作</h1>
+  </div>
+  <div class="report-form-wrapper">
+    <%= form_tag("/reports/create") do %>
+      <div class = "data-form" >
+          <li>日づけ</li>
+          <input type="date" name="classDate" value="2024-11-01" required>
+
+          <li>時間</li>
+          <input type="time" name="classTime" value="15:00" required>
+
+          <li>科目</li>
+          <input type="text" name="classSubject" list="subjectName">
+
+          <datalist id ="subjectName">
+            <option value="英語"></option>
+            <option value="数学"></option>
+            <option value="国語"></option>
+            <option value="理科"></option>
+            <option value="社会"></option>
+          </datalist>
+
+          <li>授業内容</li>
+          <input type="textarea" name="classContent">
+
+          <li>宿題</li>
+          <input type="textarea" name="classHomework">
+
+
+          <li>コメント</li>
+          <input type="textarea" name="classComment">
+
+          <input type = "hidden" name = "done" value = false >
+
+
+          <input type="submit" value="作成する">
+
+          
+        </form>
+      </div>
+    <%end%>
+  </div>
+</div>

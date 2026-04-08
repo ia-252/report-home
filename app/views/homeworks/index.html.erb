@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="link-menu">
+        <%= link_to "TOP", "/",class: "link" %>
+        <p>/</p>
+        <%= link_to "宿題", "/homeworks/index",class: "link" %> 
+    </div>
+    <div class="tytle">
+        <h1>宿題</h1>
+    </div>
+    <div class="report-table-wrapper">
+                
+        <div class="calendar">
+            <%= month_calendar events: @reports do |date, reports| %>
+                <%= date.day %>
+            
+                <% reports.each do |report| %>
+                    <div class = "day-field">
+                        <% if report.done == true then%>
+                            <i class="fas fa-check-circle"></i>
+                            <span><%=  link_to  report.classHomework , "/homeworks/#{report.id}" ,class: "event" %><span>
+                        <% else%>
+                            <%=  link_to  report.classHomework , "/homeworks/#{report.id}" ,class: "event" %> 
+                        <%end%>
+                    </div> 
+                <% end %>
+        <%end%>
+    </div>
+</div>

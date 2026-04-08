@@ -1,0 +1,355 @@
+.reports-index{
+    margin-top: 0px;
+    padding-top: 0px;
+}
+  
+  
+  
+  /* posts/new ================================ */
+  .posts-new textarea {
+    font-size: 20px;
+    padding: 10px;
+    min-height: 140px;
+    border: 1px solid rgb(255, 206, 159);
+    resize: none;
+  }
+  
+  .posts-new textarea::-webkit-input-placeholder {
+    font-size: 24px;
+    opacity: 0.5;
+  }
+
+  .btn{
+    text-align: center;
+    font-size: 100px;
+}
+
+/*reports.index==========================================================*/
+.link-menu{
+  margin-top: 0;
+  background-color: white;
+  color:rgb(234, 158, 86);
+  display: inline;
+  & p{
+    display: inline;
+  }
+}
+.link{
+  display: inline;
+}
+.index-header{
+  display: block;
+  & .tytle{
+    display: inline-block;
+    margin-bottom: 0px;
+    padding: 0 0;
+  }
+}
+
+
+
+
+.new-btn{
+  display: inline;
+  color:rgb(234, 158, 86);
+  background-color: white;
+  padding: 0 0px;
+  margin-top: 27px;
+  margin-bottom: 0;
+  height: 35px;
+  width: 35px;
+  float: right;
+  border-radius: 4px;
+  & a{
+    font-size: 21px;
+    padding: 0 10px;
+    margin: 0 0;
+    line-height: center;
+    
+  }
+}
+
+.date-menu-bar{
+  z-index: 10;
+  position: fixed;
+}
+
+summary{
+    
+     display: inline-block;
+     margin: 0;
+     padding: 0;
+ }
+ 
+ summary::webkit-details-marker{
+     display: none;
+ }
+
+ summary p{ 
+  margin:0 0;
+  padding: 1px 5px;
+  border-radius: 2px;
+  width: 100px;
+  float:left;
+  text-align: center;
+  margin-right: 10px;
+  color: rgb(234, 158, 86);
+  background-color: white;
+  position:absolute; 
+}
+
+
+ .date-menu-bar-list {
+     display: block;
+     float: left;
+     position: relative;
+     top: 26px;
+     left:0;
+     background-color: rgb(255, 232, 211);
+     
+     & li{
+      display: block;
+      opacity: 1;
+      width: 100px;
+      text-align: center;
+      color: rgb(234, 158, 86);
+      border-bottom: rgb(255, 170, 91);
+     }
+}
+ 
+ 
+
+.report-table-wrapper{
+    z-index: 0;
+    display: block;
+    border: 1px solid rgb(255, 206, 159);
+    background-color: white;
+    margin-top: 20px;
+    padding: 0 0;
+    box-shadow: 0 6px 10px rgb(255, 206, 159);
+
+    color:rgb(234, 158, 86);
+    
+}
+
+.table-head{
+    margin: 0 0;
+    padding: 0 0;
+    font-size: clamp(2px, 15px, 15px);
+    display:flex;
+    align-items: stretch;
+}
+
+.table-body{
+    margin: 0 0;
+    padding: 0 0;
+    display: flex;
+    align-items: stretch;
+
+}
+    
+
+
+
+.date-column{  
+    display: inline-block;
+    padding: 5px 0;
+    margin: 0;
+    width:10%;
+    text-align: center;
+    border-right: 1px solid rgb(255, 206, 159);
+    border-bottom: 1px solid rgb(255, 206, 159);
+    font-size: clamp(2px, 15px, 15px);
+  }
+
+.time-column{
+    display: inline-block;
+    padding: 5px 0;
+    margin: 0;
+    width:10%;
+    text-align: center;
+    border-right: 1px solid rgb(255, 206, 159);
+    border-bottom: 1px solid rgb(255, 206, 159);
+    font-size: clamp(2px, 15px, 15px);
+}
+
+.subject-column{
+    display: inline-block;
+    padding: 5px 0;
+    width:10%;
+    text-align: center;
+    border-right: 1px solid rgb(255, 206, 159);
+    border-bottom: 1px solid rgb(255, 206, 159);
+    font-size: clamp(2px, 15px, 15px);
+}
+
+.content-column{
+    display: inline-block;
+    padding: 5px 0;
+    width:25%;
+    text-align: center;
+    border-right: 1px solid rgb(255, 206, 159);
+    border-bottom: 1px solid rgb(255, 206, 159);
+    font-size: clamp(2px, 15px, 15px);
+}
+
+.homework-column{
+    display: inline-block;
+    padding: 5px 0;
+    width:15%;
+    text-align: center;
+    border-right: 1px solid rgb(255, 206, 159);
+    border-bottom: 1px solid rgb(255, 206, 159);
+    font-size: clamp(2px, 15px, 15px);
+}
+
+.comment-column{
+    display: inline-block;
+    width: 30%;
+    padding: 5px 0;
+    text-align: center;
+    font-size: clamp(2px, 15px, 15px);
+    border-bottom: 1px solid rgb(255, 206, 159);
+}
+
+.container-header{
+    display: block;
+}
+
+.simple-calendar {
+  
+  background-color:white;
+  .prev-month {
+    background: #DDD;
+  }
+  .next-month {
+    background: #DDD;
+  }
+ .has-events {
+   background: rgb(255, 198, 146);
+   color: white;
+ }
+ 
+ .day-field{
+  text-align: center;
+  & .event{
+    width: 80%;
+  }
+ }
+
+
+  .event {
+    
+    align-items: center;
+    padding: 3px 5px;
+    border-radius: 3px;
+    width:97%;
+   color: rgb(234, 158, 86);
+    background-color: white;
+  }
+}
+
+/* reports.show =====================================================*/
+.reports-show{
+  color: white;
+}
+
+.reports-Details{
+  background-color: white;
+  width: 80%;
+  color: white;
+  padding: 10px 0;
+  display: table;
+  text-align: center;
+}
+.class-Detail{
+  align-items: center;
+  vertical-align: middle;
+  height: 150px;
+  display: inline-block;
+  width: 25%;
+  padding: 10px 0;
+  margin: 30px;
+  text-align: center;
+  color:white;
+  border-radius: 10px;
+  background-color:rgb(234, 158, 86);
+  & p{
+    padding: 10px 0;
+    margin: 0;
+    border-bottom: 1px solid white;
+  }
+  & .p{
+    display: block;
+    padding: 10px 0;
+    margin: 0;
+    border-bottom: 1px solid white;
+  }
+}
+
+.class-data{
+  display: inline-flex;
+  align-items: center;
+  height: 80px;
+}
+.data{
+  text-align: center;
+  margin-top: 10px;
+}
+
+
+/* reports.new ======================================================*/
+.data-form{
+    margin-top: 100px;
+    & li{
+        color: white;
+        padding-bottom: 10px; 
+        font-weight:bold;
+    }
+
+    
+    & input{
+        border:1px solid rgb(255, 206, 159);
+        color:burlywood;
+        width:400px;
+        height: 40px;
+        padding:0 10px;
+        display: inline-block;
+    }
+    &  [type=textarea]{
+        border:1px solid rgb(255, 206, 159);
+        color:burlywood;
+        width:400px;
+        height: 80px !important;
+        padding:0 10px;
+        display: inline-block;
+    }
+
+    [type=submit]{
+        border:1px solid rgb(255, 206, 159);
+        color:burlywood;
+        background-color: white;
+        width:400px;
+        height: 40px ;
+        margin-top:20px;
+        padding:0 10px;
+        display: block;
+    }
+  }
+
+/* report.edit*==================================*/
+.delete{
+  margin-top: 8px;
+  background-color: white;
+  color: burlywood;
+  float: right;
+  padding:5px 10px;
+  border-radius: 3px;
+}
+
+.form-heading{
+  display: inline;
+  padding: 0;
+  margin: 0;
+  color: white;
+}

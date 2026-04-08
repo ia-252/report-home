@@ -1,0 +1,29 @@
+<div class="main posts-new">
+  <div class="container">
+    <div class="link-menu">
+      <%= link_to "TOP", "/",class: "link" %>
+    </div>
+    <div class="tytle">
+        <h1 class="form-heading">設定</h1>
+    </div>
+
+    
+    <div class="student users-form">
+        <div class="form-body">
+            <div class="user-menu">
+            <h1 class="form-heading">設定</h1>
+            </div>
+            <div class="student">
+                <h2>ユーザー情報</h2>
+                <p>ユーザー名</p>
+                <div class="border"><%= @userT.name %></div>
+                <p>担当生徒</p>
+                <%= @student%>
+                <p>メールアドレス</p>
+                <div class="border"><%= @userT.email %></div>
+                <div class="btn"><%= link_to("編集ページ","/users/teacher/#{@userT.id}/edit") %><div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
