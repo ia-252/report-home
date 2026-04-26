@@ -46,4 +46,6 @@ Thumbs.db
 
 .next/
 dist/
-build/
+build/vendor/bundle/
+vendor/bundle/
+vendor/bundle/
