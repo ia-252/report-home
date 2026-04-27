@@ -11,8 +11,7 @@ class Report < ApplicationRecord
         self.classDate
     end
     
-    validate :check_classDate, on: :create
-    validate :check_classDate, on: :update
+    validate :check_limit_time, on: [:create, :update]
       
     private
     def check_limit_time
